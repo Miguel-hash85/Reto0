@@ -9,6 +9,6 @@ package reto0.view;
  *
  * @author Matteo Fernández
  */
-public class View {
-    
+public interface View {
+        public void showGreeting(String greeting);
 }

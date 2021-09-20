@@ -9,6 +9,6 @@ package reto0.model;
  *
  * @author Matteo Fernández
  */
-public class Model {
+public interface Model {
     
 }
