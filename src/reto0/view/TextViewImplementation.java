@@ -9,6 +9,14 @@ package reto0.view;
  *
  * @author Matteo Fernández
  */
-public class TextViewImplementation {
-    
+public class TextViewImplementation implements View{
+
+    /**
+     *
+     * @param greeting
+     */
+    @Override
+    public void showGreeting(String greeting) {
+        System.out.println(greeting);
+    }
 }
