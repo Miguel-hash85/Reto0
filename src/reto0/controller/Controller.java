@@ -5,10 +5,17 @@
  */
 package reto0.controller;
 
+import reto0.model.Model;
+import reto0.view.View;
+
 /**
  *
  * @author Matteo Fernández
  */
 public class Controller {
-    
+
+    public void run(Model model, View view) {
+        //     view showGreeting(model.getGreeting());  
+    }
+
 }
