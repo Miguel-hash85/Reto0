@@ -5,9 +5,18 @@
  */
 package reto0;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import reto0.controller.Controller;
 import reto0.model.Model;
+import reto0.model.ModelFactory;
 import reto0.view.View;
+import reto0.view.ViewFactory;
 
 /**
  *
@@ -20,19 +29,24 @@ public class Aplication {
      */
     public static void main(String[] args) {
         //new
-        Model model = new Model() {
-        };
-        View view = new View() {
-            @Override
-            public void showGreeting(String greeting) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-        };
-        Controller controller = new Controller();
+        Properties propiedades = new Properties();
+        try {
+            InputStream typeFile= new FileInputStream("data.properties");
+            propiedades.load(typeFile);
+            Model model=ModelFactory.getModel(propiedades.getProperty("modelImplementation"));
+            View view=ViewFactory.getView(propiedades.getProperty("viewImplementation"));
+            Controller controller = new Controller();
+            controller.run(model, view);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Aplication.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Aplication.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
 
         // TODO: model=ModelFactory.getModelInstance().getModel(ModelFactory.TYPE);
         // TODO: view=ViewFactory.getViewInstance().getView(ViewFactory.TYPE);
-        controller.run(model, view);
+        
     }
 
 }

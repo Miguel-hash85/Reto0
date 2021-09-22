@@ -5,6 +5,9 @@
  */
 package reto0.controller;
 
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import reto0.model.Model;
 import reto0.view.View;
 
@@ -13,9 +16,16 @@ import reto0.view.View;
  * @author Matteo Fernández
  */
 public class Controller {
+    
 
     public void run(Model model, View view) {
-        //     view showGreeting(model.getGreeting());  
+        
+        try {
+            view.showGreeting(model.getGreeting());
+        } catch (Exception ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         
     }
 
 }

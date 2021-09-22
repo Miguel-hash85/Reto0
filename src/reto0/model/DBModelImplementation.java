@@ -9,6 +9,11 @@ package reto0.model;
  *
  * @author Matteo Fernández
  */
-public class DBModelImplementation {
+public class DBModelImplementation implements Model{
+
+    @Override
+    public String getGreeting() throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

@@ -11,4 +11,13 @@ package reto0.view;
  */
 public class ViewFactory {
     
+    
+    public static View getView(String type){
+        View view=null;
+        if(type.equalsIgnoreCase("Text")){
+            view=new TextViewImplementation();
+        }
+        return view;
+    }
+    
 }

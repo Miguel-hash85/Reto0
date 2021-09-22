@@ -11,4 +11,6 @@ package reto0.model;
  */
 public interface Model {
     
+    public String getGreeting () throws Exception;
+    
 }

@@ -11,4 +11,14 @@ package reto0.model;
  */
 public class ModelFactory {
     
+    
+    public static Model getModel(String type){
+        Model model = null;
+        if(type.equalsIgnoreCase("File")){
+            model=new FileModelImplementation();
+        }else{
+        }
+        return model;
+    }
+    
 }
