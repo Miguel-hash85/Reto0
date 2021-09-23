@@ -43,10 +43,6 @@ public class Aplication {
             Logger.getLogger(Aplication.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-
-        // TODO: model=ModelFactory.getModelInstance().getModel(ModelFactory.TYPE);
-        // TODO: view=ViewFactory.getViewInstance().getView(ViewFactory.TYPE);
-        
     }
 
 }
